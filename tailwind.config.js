@@ -24,9 +24,13 @@ module.exports = {
         'blue': '#4356FF',
       },
       boxShadow: {
-        'inner': 'inset -3px -3px 5px #FFFFFF, inset 3px 3px 5px #C0C0C0',
-        'outer': '-5px -5px 10px #FFFFFF, 5px 5px 10px #C0C0C0',
+        'inner': 'inset -3px -3px 5px #FFFFFF, inset 3px 3px 5px #CDCDCD',
+        'outer': '-5px -5px 10px #FFFFFF, 5px 5px 10px #CDCDCD',
       },
+    },
+    fontFamily: {
+      header: ["Exo", "sans-serif"],
+      normalText: ["Lexend", "sans-serif"]
     },
   },
   plugins: [],
