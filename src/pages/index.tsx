@@ -1,4 +1,4 @@
-import Exo from '@next/font/google';
+// This is the home page that is display when you first open the link
 
 export default function App() {
   return (
@@ -24,8 +24,8 @@ export default function App() {
 
           {/* Buttons to pages */}
           <div className='flex gap-8'>
-            <button className="bg-button-grey mt-3 py-1 px-8 rounded-md shadow-outer hover:bg-purple font-normalText">View Tenders</button>
-            <button className="bg-button-grey mt-3 py-1 px-8 rounded-md shadow-outer hover:bg-purple font-normalText">Create Tenders</button>
+            <button className="bg-button-grey mt-3 py-1 px-8 rounded-md shadow-outer hover:bg-purple font-normalText text-med">View Tenders</button>
+            <button className="bg-button-grey mt-3 py-1 px-8 rounded-md shadow-outer hover:bg-purple font-normalText text-med">Create Tenders</button>
           </div>
         </div>
 

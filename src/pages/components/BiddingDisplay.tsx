@@ -5,7 +5,7 @@ import { InputForm } from './Forms';
 import { TenderDescription } from './Description';
 import { X } from 'react-feather';
 
-export const submitBid = () => {
+export const BiddingDisplay = () => {
   return (
     <div className="grid h-screen place-items-center bg-background-white">
       <div className="rounded-md w-[900px] bg-background-white shadow-outer pl-8 pr-3 pt-3 pb-6">

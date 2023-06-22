@@ -47,45 +47,45 @@ export const InputForm = () => {
         <div className='bg-center pl-7'>
             {/* Header */}
             <div className="flex justify-center">
-                <h1 className="text-black font-bold mb-4"> Bid Details </h1>
+                <h1 className="text-black font-bold mb-4 font-normalText"> Bid Details </h1>
             </div>
 
             <div className="grid grid-cols-3 gap-2">
                 {/* Company name */}
-                <label htmlFor="companyName" className="text-black col-span-1 self-center"> Company Name: </label>
+                <label htmlFor="companyName" className="text-black col-span-1 self-center font-normalText text-med"> Company Name: </label>
                 <input
                 type="text"
                 id="companyName"
                 onChange={event => setCompanyName(event.target.value)}
                 value={companyName}
-                className="text-black col-span-2 rounded-md bg-background-white shadow-inner outline-none px-2 py-1"
+                className="text-black col-span-2 rounded-md bg-background-white shadow-inner outline-none px-2 py-1 font-normalText text-med"
                 autoComplete='off'
                 />
 
                 {/* Contact email */}
-                <label htmlFor="email" className="text-black col-span-1 self-center"> Contact Email: </label>
+                <label htmlFor="email" className="text-black col-span-1 self-center font-normalText text-med"> Contact Email: </label>
                 <input
                 type="email"
                 id="email"
                 onChange={event => setEmail(event.target.value)}
                 value={email}
-                className="text-black col-span-2 rounded-md bg-background-white shadow-inner outline-none px-2 py-1"
+                className="text-black col-span-2 rounded-md bg-background-white shadow-inner outline-none px-2 py-1 font-normalText text-med"
                 autoComplete='off'
                 />
 
                 {/* Business VAT number */}
-                <label htmlFor="vatNumber" className="text-black col-span-1 self-center"> VAT Number: </label>
+                <label htmlFor="vatNumber" className="text-black col-span-1 self-center font-normalText text-med"> VAT Number: </label>
                 <input
                 type="text"
                 id="vatNumber"
                 onChange={event => setVatNumber(event.target.value)}
                 value={vatNumber}
-                className="text-black col-span-2 rounded-md bg-background-white shadow-inner outline-none px-2 py-1"
+                className="text-black col-span-2 rounded-md bg-background-white shadow-inner outline-none px-2 py-1 font-normalText text-med"
                 autoComplete='off'
                 />
 
                 {/* Quote */}
-                <label htmlFor="quote" className="text-black col-span-1 self-center"> Quote (R): </label>
+                <label htmlFor="quote" className="text-black col-span-1 self-center font-normalText text-med"> Quote (R): </label>
                 <input
                 type="number"
                 id="quote"
@@ -96,11 +96,11 @@ export const InputForm = () => {
                     else
                         setQuote(-1)
                     }}
-                className="text-black col-span-2 rounded-md bg-background-white shadow-inner outline-none px-2 py-1"
+                className="text-black col-span-2 rounded-md bg-background-white shadow-inner outline-none px-2 py-1 font-normalText text-med"
                 />
 
                 {/* Subcontracted radio buttons */}
-                <label className="text-black col-span-1 self-center">Subcontracted: </label>
+                <label className="text-black col-span-1 self-center font-normalText text-med">Subcontracted: </label>
                 <div className="col-span-1 py-1">
                     <input
                     type="radio"
@@ -110,7 +110,7 @@ export const InputForm = () => {
                     onChange={event => setSubcontracted(event.target.value)}
                     className='accent-purple outline-none'
                     />
-                    <label htmlFor="subcontracted-yes" className='text-black'> Yes</label>
+                    <label htmlFor="subcontracted-yes" className='text-black font-normalText text-med'> Yes</label>
                 </div>
 
                 <div className="col-span-1 py-1">
@@ -122,11 +122,11 @@ export const InputForm = () => {
                     onChange={event => setSubcontracted(event.target.value)}
                     className='accent-purple outline-none'
                     />
-                    <label htmlFor="subcontracted-no" className='text-black'> No</label>
+                    <label htmlFor="subcontracted-no" className='text-black font-normalText text-med'> No</label>
                 </div>
 
                 {/* Experience */}
-                <label htmlFor="experience" className="text-black col-span-2 self-center"> Years of Experience in Field: </label>
+                <label htmlFor="experience" className="text-black col-span-2 self-center font-normalText text-med"> Years of Experience in Field: </label>
                 <input
                 type="number"
                 id="experience"
@@ -137,11 +137,11 @@ export const InputForm = () => {
                     else
                         setExperience(-1)
                     }}
-                className="text-black rounded-md col-span-1 bg-background-white shadow-inner outline-none px-2 py-1"
+                className="text-black rounded-md col-span-1 bg-background-white shadow-inner outline-none px-2 py-1 font-normalText text-med"
                 />
 
                 {/* Estimated weeks */}
-                <label htmlFor="estimatedWeeks" className="text-black col-span-2 self-center"> Estimated Weeks to Complete: </label>
+                <label htmlFor="estimatedWeeks" className="text-black col-span-2 self-center font-normalText text-med"> Estimated Weeks to Complete: </label>
                 <input
                 type="number"
                 id="estimatedWeeks"
@@ -152,16 +152,16 @@ export const InputForm = () => {
                     else
                         setEstimatedWeeks(-1)
                     }}
-                className="text-black rounded-md col-span-1 bg-background-white shadow-inner outline-none px-2 py-1"
+                className="text-black rounded-md col-span-1 bg-background-white shadow-inner outline-none px-2 py-1 font-normalText text-med"
                 />
 
                 {/* BBBEE status */}
-                <label htmlFor="bbbeeStatus" className="text-black col-span-2 self-center"> B-BBEE Status Level: </label>
+                <label htmlFor="bbbeeStatus" className="text-black col-span-2 self-center font-normalText text-med"> B-BBEE Status Level: </label>
                 <select 
                 id="bbbeeStatus" 
                 name="bbbeeStatus" 
                 onChange={event => setBbbeeStatus(event.target.value)}
-                className='text-black rounded-md col-span-1 bg-background-white shadow-inner outline-none px-2 py-1'
+                className='text-black rounded-md col-span-1 bg-background-white shadow-inner outline-none px-2 py-1 font-normalText text-med'
                 defaultValue={'default'}
                 >
                     <option hidden value="default">  </option> {/* Default value */}
@@ -177,7 +177,7 @@ export const InputForm = () => {
                 </select>
 
                 {/* Previously terminated tender contract */}
-                <label className="text-black col-span-3 self-center pt-1">Do You Have a Previously Terminated Tender? </label>
+                <label className="text-black col-span-3 self-center pt-1 font-normalText text-med">Do You Have a Previously Terminated Tender? </label>
                 <div className="col-span-1 pb-1">
                     <input
                     type="radio"
@@ -187,7 +187,7 @@ export const InputForm = () => {
                     onChange={event => setTerminated(event.target.value)}
                     className='accent-purple outline-none'
                     />
-                    <label htmlFor="terminated-yes" className='text-black'> Yes</label>
+                    <label htmlFor="terminated-yes" className='text-black font-normalText text-med'> Yes</label>
                 </div>
 
                 <div className="col-span-1 pb-1">
@@ -199,13 +199,13 @@ export const InputForm = () => {
                     onChange={event => setTerminated(event.target.value)}
                     className='accent-purple outline-none'
                     />
-                    <label htmlFor="terminated-no" className='text-black'> No</label>
+                    <label htmlFor="terminated-no" className='text-black font-normalText text-med'> No</label>
                 </div>
             </div>
             
             {/* Submit button */}
             <div className="flex justify-center">
-                <button onClick={submitBid} className="bg-button-grey mt-3 py-1 px-8 rounded-md shadow-outer hover:bg-purple">Submit Bid</button>
+                <button onClick={submitBid} className="bg-button-grey mt-3 py-1 px-8 rounded-md shadow-outer hover:bg-purple font-normalText text-med">Submit Bid</button>
             </div>
         </div>
     );

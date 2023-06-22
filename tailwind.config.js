@@ -27,6 +27,9 @@ module.exports = {
         'inner': 'inset -3px -3px 5px #FFFFFF, inset 3px 3px 5px #CDCDCD',
         'outer': '-5px -5px 10px #FFFFFF, 5px 5px 10px #CDCDCD',
       },
+      fontSize: {
+        med: '0.93rem',
+      },
     },
     fontFamily: {
       header: ["Exo", "sans-serif"],
