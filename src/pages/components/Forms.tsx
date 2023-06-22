@@ -1,5 +1,6 @@
 import {useState} from 'react';
 
+// This is used to display the bidding application 
 export const InputForm = () => {
     const [companyName, setCompanyName] = useState('');
     const [email, setEmail] = useState('');
@@ -11,6 +12,7 @@ export const InputForm = () => {
     const [bbbeeStatus, setBbbeeStatus] = useState('');
     const [terminated, setTerminated] = useState('')
   
+    // Check that everything was filled in
     const checkInput = () => {
         if ((companyName.trim().length !== 0) && (email.trim().length !== 0) && (vatNumber.trim().length !== 0) && (subcontracted.trim().length !== 0) && (bbbeeStatus.trim().length !== 0) && (terminated.trim().length !== 0) && (quote !== -1) && (experience !== -1) && (estimatedWeeks !== -1)) 
             return true
@@ -20,6 +22,7 @@ export const InputForm = () => {
         }
     }
 
+    // Chcek validity of quote and email
     const checkValues = () => {
         if (!(/\S+@\S+\.\S+/.test(email))) {
             console.log('Oops! Looks like you didn\'t put in your email correctly.')
@@ -34,6 +37,7 @@ export const InputForm = () => {
         return true
     }
 
+    // Send bid to smart contract
     const submitBid = () => {
         if (checkInput() && checkValues())
             console.log(`Company Name: ${companyName} \nEmail: ${email} \nVAT Number: ${vatNumber} \nQuote: ${quote} \nSubcontracted: ${subcontracted} \nExperience: ${experience} \nEstimated Weeks: ${estimatedWeeks} \nBBBEE Status Level: ${bbbeeStatus} \nPreviously Terminated: ${terminated}`) 
@@ -41,11 +45,13 @@ export const InputForm = () => {
 
     return (
         <div className='bg-center pl-7'>
+            {/* Header */}
             <div className="flex justify-center">
                 <h1 className="text-black font-bold mb-4"> Bid Details </h1>
             </div>
 
             <div className="grid grid-cols-3 gap-2">
+                {/* Company name */}
                 <label htmlFor="companyName" className="text-black col-span-1 self-center"> Company Name: </label>
                 <input
                 type="text"
@@ -56,6 +62,7 @@ export const InputForm = () => {
                 autoComplete='off'
                 />
 
+                {/* Contact email */}
                 <label htmlFor="email" className="text-black col-span-1 self-center"> Contact Email: </label>
                 <input
                 type="email"
@@ -66,6 +73,7 @@ export const InputForm = () => {
                 autoComplete='off'
                 />
 
+                {/* Business VAT number */}
                 <label htmlFor="vatNumber" className="text-black col-span-1 self-center"> VAT Number: </label>
                 <input
                 type="text"
@@ -76,11 +84,13 @@ export const InputForm = () => {
                 autoComplete='off'
                 />
 
+                {/* Quote */}
                 <label htmlFor="quote" className="text-black col-span-1 self-center"> Quote (R): </label>
                 <input
                 type="number"
                 id="quote"
                 onChange={event => {
+                    // If value entered isn't a number then variable is set to -1 (invalid)
                     if (!isNaN(parseInt(event.target.value)))
                         setQuote(parseInt(event.target.value))
                     else
@@ -89,6 +99,7 @@ export const InputForm = () => {
                 className="text-black col-span-2 rounded-md bg-background-white shadow-inner outline-none px-2 py-1"
                 />
 
+                {/* Subcontracted radio buttons */}
                 <label className="text-black col-span-1 self-center">Subcontracted: </label>
                 <div className="col-span-1 py-1">
                     <input
@@ -114,11 +125,13 @@ export const InputForm = () => {
                     <label htmlFor="subcontracted-no" className='text-black'> No</label>
                 </div>
 
+                {/* Experience */}
                 <label htmlFor="experience" className="text-black col-span-2 self-center"> Years of Experience in Field: </label>
                 <input
                 type="number"
                 id="experience"
                 onChange={event => {
+                    // If value entered isn't a number then variable is set to -1 (invalid)
                     if (!isNaN(parseInt(event.target.value)))
                         setExperience(parseInt(event.target.value))
                     else
@@ -127,11 +140,13 @@ export const InputForm = () => {
                 className="text-black rounded-md col-span-1 bg-background-white shadow-inner outline-none px-2 py-1"
                 />
 
+                {/* Estimated weeks */}
                 <label htmlFor="estimatedWeeks" className="text-black col-span-2 self-center"> Estimated Weeks to Complete: </label>
                 <input
                 type="number"
                 id="estimatedWeeks"
                 onChange={event => {
+                    // If value entered isn't a number then variable is set to -1 (invalid)
                     if (!isNaN(parseInt(event.target.value)))
                         setEstimatedWeeks(parseInt(event.target.value))
                     else
@@ -140,6 +155,7 @@ export const InputForm = () => {
                 className="text-black rounded-md col-span-1 bg-background-white shadow-inner outline-none px-2 py-1"
                 />
 
+                {/* BBBEE status */}
                 <label htmlFor="bbbeeStatus" className="text-black col-span-2 self-center"> B-BBEE Status Level: </label>
                 <select 
                 id="bbbeeStatus" 
@@ -148,7 +164,7 @@ export const InputForm = () => {
                 className='text-black rounded-md col-span-1 bg-background-white shadow-inner outline-none px-2 py-1'
                 defaultValue={'default'}
                 >
-                    <option hidden value="default">  </option>
+                    <option hidden value="default">  </option> {/* Default value */}
                     <option value="1">Level One</option>
                     <option value="2">Level Two</option>
                     <option value="3">Level Three</option>
@@ -160,6 +176,7 @@ export const InputForm = () => {
                     <option value="0">None</option>
                 </select>
 
+                {/* Previously terminated tender contract */}
                 <label className="text-black col-span-3 self-center pt-1">Do You Have a Previously Terminated Tender? </label>
                 <div className="col-span-1 pb-1">
                     <input
@@ -186,6 +203,7 @@ export const InputForm = () => {
                 </div>
             </div>
             
+            {/* Submit button */}
             <div className="flex justify-center">
                 <button onClick={submitBid} className="bg-button-grey mt-3 py-1 px-8 rounded-md shadow-outer hover:bg-purple">Submit Bid</button>
             </div>
