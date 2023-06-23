@@ -15,9 +15,9 @@ module.exports = {
       },
       colors: {
         'background-white': '#F0F0F3',
-        'button-grey': '#CECECE',
         'shadow-grey': '#C0C0C0',
         'text-grey': '#A9A9A9',
+        'light-purple': '#B297A6',
         'purple': '#A6005A',
         'yellow': '#FFDC61',
         'red': '#FF2020',

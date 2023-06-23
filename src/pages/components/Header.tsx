@@ -4,7 +4,7 @@ import React from 'react';
 
 export const Header = () => {
   return (
-        <nav className="flex flex-wrap items-center justify-between rounded-md w-[95%] h-[50px] bg-background-white shadow-outer place-self-center my-3 px-6">
+        <nav className="flex flex-wrap items-center justify-between rounded-md w-[97%] h-[50px] bg-background-white shadow-outer place-self-center my-3 px-6">
             <div className="flex items-center">
                 <img src="/images/logo.png" className="h-8 mr-3" alt="TenderIt Logo" />
                 <span className="self-center text-2xl whitespace-nowrap text-black font-header">TENDERIT</span>
@@ -33,7 +33,7 @@ export const Header = () => {
                     </li>
                     <li className='flex align-middle'>
                         <div className='flex flex-row items-center content-center'>
-                            <button className="bg-button-grey py-1 px-4 rounded-md shadow-outer hover:bg-purple font-normalText text-med">Connect Wallet</button>
+                            <button className="bg-purple py-1 px-4 rounded-md shadow-outer hover:bg-light-purple font-normalText text-med">Connect Wallet</button>
                         </div>
                     </li>
                 </ul>

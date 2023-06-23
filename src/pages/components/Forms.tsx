@@ -1,7 +1,7 @@
 import {useState} from 'react';
 
 // This is used to display the bidding application 
-export const InputForm = () => {
+export const BidForm = () => {
     const [companyName, setCompanyName] = useState('');
     const [email, setEmail] = useState('');
     const [vatNumber, setVatNumber] = useState('');
@@ -58,7 +58,7 @@ export const InputForm = () => {
                 id="companyName"
                 onChange={event => setCompanyName(event.target.value)}
                 value={companyName}
-                className="text-black col-span-2 rounded-md bg-background-white shadow-inner outline-none px-2 py-1 font-normalText text-med"
+                className="text-black col-span-2 rounded-md bg-background-white shadow-inner outline-none px-2 py-1 font-normalText text-med border-none"
                 autoComplete='off'
                 />
 
@@ -69,7 +69,7 @@ export const InputForm = () => {
                 id="email"
                 onChange={event => setEmail(event.target.value)}
                 value={email}
-                className="text-black col-span-2 rounded-md bg-background-white shadow-inner outline-none px-2 py-1 font-normalText text-med"
+                className="text-black col-span-2 rounded-md bg-background-white shadow-inner outline-none px-2 py-1 font-normalText text-med border-none"
                 autoComplete='off'
                 />
 
@@ -80,7 +80,7 @@ export const InputForm = () => {
                 id="vatNumber"
                 onChange={event => setVatNumber(event.target.value)}
                 value={vatNumber}
-                className="text-black col-span-2 rounded-md bg-background-white shadow-inner outline-none px-2 py-1 font-normalText text-med"
+                className="text-black col-span-2 rounded-md bg-background-white shadow-inner outline-none px-2 py-1 font-normalText text-med border-none"
                 autoComplete='off'
                 />
 
@@ -96,7 +96,7 @@ export const InputForm = () => {
                     else
                         setQuote(-1)
                     }}
-                className="text-black col-span-2 rounded-md bg-background-white shadow-inner outline-none px-2 py-1 font-normalText text-med"
+                className="text-black col-span-2 rounded-md bg-background-white shadow-inner outline-none px-2 py-1 font-normalText text-med border-none"
                 />
 
                 {/* Subcontracted radio buttons */}
@@ -137,7 +137,7 @@ export const InputForm = () => {
                     else
                         setExperience(-1)
                     }}
-                className="text-black rounded-md col-span-1 bg-background-white shadow-inner outline-none px-2 py-1 font-normalText text-med"
+                className="text-black rounded-md col-span-1 bg-background-white shadow-inner outline-none px-2 py-1 font-normalText text-med border-none"
                 />
 
                 {/* Estimated weeks */}
@@ -152,7 +152,7 @@ export const InputForm = () => {
                     else
                         setEstimatedWeeks(-1)
                     }}
-                className="text-black rounded-md col-span-1 bg-background-white shadow-inner outline-none px-2 py-1 font-normalText text-med"
+                className="text-black rounded-md col-span-1 bg-background-white shadow-inner outline-none px-2 py-1 font-normalText text-med border-none"
                 />
 
                 {/* BBBEE status */}
@@ -161,7 +161,7 @@ export const InputForm = () => {
                 id="bbbeeStatus" 
                 name="bbbeeStatus" 
                 onChange={event => setBbbeeStatus(event.target.value)}
-                className='text-black rounded-md col-span-1 bg-background-white shadow-inner outline-none px-2 py-1 font-normalText text-med'
+                className='text-black rounded-md col-span-1 bg-background-white shadow-inner outline-none px-2 py-1 font-normalText text-med border-none'
                 defaultValue={'default'}
                 >
                     <option hidden value="default">  </option> {/* Default value */}
@@ -205,7 +205,116 @@ export const InputForm = () => {
             
             {/* Submit button */}
             <div className="flex justify-center">
-                <button onClick={submitBid} className="bg-button-grey mt-3 py-1 px-8 rounded-md shadow-outer hover:bg-purple font-normalText text-med">Submit Bid</button>
+                <button onClick={submitBid} className="bg-purple mt-3 py-1 px-8 rounded-md shadow-outer hover:bg-light-purple font-normalText text-med">Submit Bid</button>
+            </div>
+        </div>
+    );
+}
+
+// This is used to display the application for creating tenders
+export const CreateForm = () => {
+    const [tenderName, setTenderName] = useState('');
+    const [sector, setSector] = useState('');
+    const [location, setLocation] = useState('');
+    const [openDate, setOpenDate] = useState(''); // Format: YYYY-MM-DD
+    const [closeDate, setCloseDate] = useState('');
+    const [contactNum, setContactNum] = useState('');
+    const [description, setDescription] = useState('');
+
+    const submitTender = () => {
+            
+    }
+
+    return (
+        <div className='place-self-center'>
+            {/* Header */}
+            <div className="flex justify-center">
+                <h1 className="text-black font-bold mt-2 font-normalText text-med"> Tender Details </h1>
+            </div>
+
+            {/* Warnings */}
+            <div className="flex justify-center">
+                <p className="text-text-grey text-sm mt-4 mb-6 font-normalText text-center"> Please note that it is essential to provide complete and accurate information in this form as you will not be able to modify it later.  </p>
+            </div>
+
+
+            <div className="grid grid-cols-3 gap-2">
+                {/* Tender name */}
+                <label htmlFor="tenderName" className="text-black col-span-1 self-center font-normalText text-med"> Title: </label>
+                <input
+                type="text"
+                id="tenderName"
+                onChange={event => setTenderName(event.target.value)}
+                value={tenderName}
+                className="text-black col-span-2 rounded-md bg-background-white shadow-inner outline-none px-2 py-1 font-normalText text-med border-none"
+                autoComplete='off'
+                />
+
+                {/* Sector */}
+                <label htmlFor="sector" className="text-black col-span-1 self-center font-normalText text-med"> Sector: </label>
+                <input
+                type="text"
+                id="sector"
+                onChange={event => setSector(event.target.value)}
+                value={sector}
+                className="text-black col-span-2 rounded-md bg-background-white shadow-inner outline-none px-2 py-1 font-normalText text-med border-none"
+                autoComplete='off'
+                />
+
+                {/* Location */}
+                <label htmlFor="location" className="text-black col-span-1 self-center font-normalText text-med"> Location: </label>
+                <select 
+                id="location" 
+                name="location" 
+                onChange={event => setLocation(event.target.value)}
+                className='text-black rounded-md col-span-2 bg-background-white shadow-inner outline-none px-2 py-1 font-normalText text-med border-none'
+                defaultValue={'default'}
+                >
+                    <option hidden value="default">  </option> {/* Default value */}
+                    <option value="kwazuluNatal">KwaZulu-Natal</option>
+                    <option value="limpopo">Limpopo</option>
+                    <option value="gauteng">Gauteng</option>
+                    <option value="easternCape">Eastern Cape</option>
+                    <option value="westernCape">Western Cape</option>
+                    <option value="northernCape">Northern Cape</option>
+                    <option value="northWest">North West</option>
+                    <option value="mpumalanga">Mpumalanga</option>
+                    <option value="freeState">Free State</option>
+                </select>
+
+                {/* Open Date */}
+                <label htmlFor="openDate" className="text-black col-span-1 self-center font-normalText text-med"> Open Date: </label>
+                <input
+                type="date"
+                id="openDate"
+                onChange={event => setOpenDate(event.target.value)}
+                className="text-black col-span-2 rounded-md bg-background-white shadow-inner outline-none px-2 py-1 font-normalText text-med border-none"
+                autoComplete='off'
+                />
+
+                {/* Close Date */}
+                <label htmlFor="closeDate" className="text-black col-span-1 self-center font-normalText text-med"> Close Date: </label>
+                <input
+                type="date"
+                id="closeDate"
+                onChange={event => setCloseDate(event.target.value)}
+                className="text-black col-span-2 rounded-md bg-background-white shadow-inner outline-none px-2 py-1 font-normalText text-med border-none"
+                />
+
+                {/* Description */}
+                <label htmlFor="description" className="text-black col-span-3 self-center font-normalText text-med"> Description: </label>
+                <input
+                type="text"
+                id="description"
+                onChange={event => setDescription(event.target.value)}
+                value={description}
+                className="text-black rounded-md col-span-3 break-words bg-background-white shadow-inner outline-none px-2 py-1 font-normalText text-med border-none"
+                />
+            </div>
+            
+            {/* Submit button */}
+            <div className="flex justify-center">
+                <button className="bg-purple mt-4 py-1 px-8 rounded-md shadow-outer hover:bg-light-purple font-normalText text-med">Submit Tender</button>
             </div>
         </div>
     );

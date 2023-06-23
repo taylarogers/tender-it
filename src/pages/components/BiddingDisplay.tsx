@@ -1,7 +1,7 @@
 // This is used to view the submitting bid display
 
 import React from 'react';
-import { InputForm } from './Forms';
+import { BidForm } from './Forms';
 import { TenderDescription } from './Description';
 import { X } from 'react-feather';
 
@@ -16,7 +16,7 @@ export const BiddingDisplay = () => {
         {/* Description and bid application */}
         <div className="grid grid-cols-2 divide-x-2 divide-button-grey gap-2 content-center pr-5">
           <TenderDescription/>
-          <InputForm/>
+          <BidForm/>
         </div>
       </div>
   );

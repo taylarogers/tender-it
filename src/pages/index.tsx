@@ -26,8 +26,8 @@ export default function App() {
 
           {/* Buttons to pages */}
           <div className='flex gap-8'>
-            <button className="bg-button-grey py-1 px-8 rounded-md shadow-outer hover:bg-purple font-normalText text-med">View Tenders</button>
-            <button className="bg-button-grey py-1 px-8 rounded-md shadow-outer hover:bg-purple font-normalText text-med">Create Tenders</button>
+            <button className="bg-purple py-1 px-8 rounded-md shadow-outer hover:bg-light-purple font-normalText text-med">View Tenders</button>
+            <button className="bg-purple py-1 px-8 rounded-md shadow-outer hover:bg-light-purple font-normalText text-med">Create Tenders</button>
           </div>
         </div>
 
