@@ -1,12 +1,14 @@
 // This is the home page that is display when you first open the link
 
+import { Header } from './components/Header';
+
 export default function App() {
   return (
     <div className="grid h-screen place-items-center bg-background-white">
       <div className='grid h-full w-[80%] grid-cols-3 gap-2 place-items-center'>
         <div className='col-span-2'>
           {/* Logo */}
-          <img src='/images/logo.png' alt='Logo' className=' h-28'/>
+          <img src='/images/logo.png' alt='Logo' className=' h-20'/>
 
           {/* Title */}
           <h1 className="text-black my-3 font-header text-5xl pt-3"> TENDERIT </h1>
@@ -24,8 +26,8 @@ export default function App() {
 
           {/* Buttons to pages */}
           <div className='flex gap-8'>
-            <button className="bg-button-grey mt-3 py-1 px-8 rounded-md shadow-outer hover:bg-purple font-normalText text-med">View Tenders</button>
-            <button className="bg-button-grey mt-3 py-1 px-8 rounded-md shadow-outer hover:bg-purple font-normalText text-med">Create Tenders</button>
+            <button className="bg-button-grey py-1 px-8 rounded-md shadow-outer hover:bg-purple font-normalText text-med">View Tenders</button>
+            <button className="bg-button-grey py-1 px-8 rounded-md shadow-outer hover:bg-purple font-normalText text-med">Create Tenders</button>
           </div>
         </div>
 

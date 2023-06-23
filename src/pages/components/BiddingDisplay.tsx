@@ -7,7 +7,6 @@ import { X } from 'react-feather';
 
 export const BiddingDisplay = () => {
   return (
-    <div className="grid h-screen place-items-center bg-background-white">
       <div className="rounded-md w-[900px] bg-background-white shadow-outer pl-8 pr-3 pt-3 pb-6">
         {/* Exit button */}
         <div className='flex justify-end'>
@@ -20,6 +19,5 @@ export const BiddingDisplay = () => {
           <InputForm/>
         </div>
       </div>
-    </div>
   );
 }
