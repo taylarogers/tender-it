@@ -1,9 +1,23 @@
 // This is the header that is displayed on each of the pages
 
 import React from 'react';
+import {useState} from 'react';
+import { ChevronDown, ChevronUp } from 'react-feather';
+import { DropDown } from './DropDown'
 
 export const Header = () => {
-  return (
+    const [connected, setConnected] = useState(false);
+    const [open, setOpen] = useState(false);
+
+    const connectWallet = () => {
+        setConnected(true);
+    }
+
+    const dropDown = () => {
+        setOpen(!open)
+    }
+
+    return (
         <nav className="flex flex-wrap items-center justify-between rounded-md w-[97%] h-[50px] bg-background-white shadow-outer place-self-center my-3 px-6">
             <div className="flex items-center">
                 <img src="/images/logo.png" className="h-8 mr-3" alt="TenderIt Logo" />
@@ -31,18 +45,40 @@ export const Header = () => {
                             <hr className="w-8 h-0.5 bg-text-grey border-0 rounded transform rotate-90 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"/>
                         </div>
                     </li>
+
+                    {connected ?
+                        <li className='flex align-middle'>
+                            <div className='flex flex-row items-center content-center relative'>
+                                
+                                {open ? (
+                                    <button onClick={dropDown}> 
+                                        <ChevronUp className='stroke-text-grey hover:stroke-black'/> 
+                                    </button>
+                                ) : (
+                                    <button onClick={dropDown}> 
+                                        <ChevronDown className='stroke-text-grey hover:stroke-black'/> 
+                                    </button>
+                                )}
+
+                                {open ? (
+                                    <DropDown/>
+                                ): null}
+                            </div>
+                        </li>
+                    : null}
+
                     <li className='flex align-middle'>
                         <div className='flex flex-row items-center content-center'>
-                            <button className="bg-purple py-1 px-4 rounded-md shadow-outer hover:bg-light-purple font-normalText text-med">Connect Wallet</button>
+                            {connected ?
+                                <button onClick={connectWallet} className="bg-purple py-1 px-4 rounded-md shadow-outer hover:bg-light-purple font-normalText text-med">Connected</button>
+                            :
+                                <button onClick={connectWallet} className="bg-purple py-1 px-4 rounded-md shadow-outer hover:bg-light-purple font-normalText text-med">Connect Wallet</button>
+                            }
+                            
                         </div>
                     </li>
                 </ul>
             </div>
         </nav>
-
-
-    // <nav className="flex flex-wrap items-center justify-between rounded-md w-[95%] h-[50px] bg-background-white shadow-outer my-3 place-self-center">
-    //     <img src="/images/logo.png" className="h-10 mx-3" alt="TenderIt Logo"/>
-    // </nav>
-  );
+    );
 }

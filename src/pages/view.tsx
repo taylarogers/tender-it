@@ -1,4 +1,5 @@
 import {BiddingDisplay} from './components/BiddingDisplay';
+import {Header} from './components/Header';
 
 export default function View() {
     return (

@@ -222,7 +222,7 @@ export const CreateForm = () => {
     const [description, setDescription] = useState('');
 
     const submitTender = () => {
-            
+            console.log('tender submitted')
     }
 
     return (
@@ -314,7 +314,7 @@ export const CreateForm = () => {
             
             {/* Submit button */}
             <div className="flex justify-center">
-                <button className="bg-purple mt-4 py-1 px-8 rounded-md shadow-outer hover:bg-light-purple font-normalText text-med">Submit Tender</button>
+                <button onClick={submitTender} className="bg-purple mt-4 py-1 px-8 rounded-md shadow-outer hover:bg-light-purple font-normalText text-med">Submit Tender</button>
             </div>
         </div>
     );
